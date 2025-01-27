@@ -17,7 +17,8 @@ export class ProductList extends Component {
   }
 
   render() {
-    const list = document.createElement("ul");
+    const list = document.createElement("div");
+    list.classList.add("row", "row-cols-1", "row-cols-md-3", "g-4");
     this.getProductItems().then(() => {
       this.productItems.forEach((item) => {
         const productItem = new ProductItem({ item: item, context: this.props.context });
