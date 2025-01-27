@@ -19,6 +19,8 @@ export class CartContext {
     } else {
       this.cartItems.push(item);
     }
+    console.log(this.cartItems);
+
     this.notify();
   }
 

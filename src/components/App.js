@@ -10,7 +10,7 @@ export class App extends Component {
 
     const productList = new ProductList({ context: cartContext });
     const cartList = new CartList({ context: cartContext });
-    app.append(productList.render());
-    app.append(cartList.render());
+    app.appendChild(productList.render());
+    app.appendChild(cartList.render());
   }
 }

@@ -15,13 +15,12 @@ export class ProductList extends Component {
       this.productItems = [];
     }
   }
+
   render() {
     const list = document.createElement("ul");
     this.getProductItems().then(() => {
       this.productItems.forEach((item) => {
-        console.log(item);
-
-        const productItem = new ProductItem({ item: item });
+        const productItem = new ProductItem({ item: item, context: this.props.context });
         list.appendChild(productItem.render());
       });
     });
