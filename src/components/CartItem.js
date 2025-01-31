@@ -3,6 +3,8 @@ import { Component } from "../common/Component.js";
 export class CartItem extends Component {
   constructor(props) {
     super(props);
+    this.handleAddCartItem = this.handleAddCartItem.bind(this);
+    this.subtractCartItem = this.handleSubtractCartItem.bind(this);
   }
   handleAddCartItem() {
     this.props.context.addCartItem(this.props.item);
