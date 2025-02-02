@@ -39,8 +39,8 @@ export class CartItem extends Component {
           <i class="fas fa-trash"></i>
         </button>`;
 
-    li.querySelector(".fa-plus").addEventListener("click", this.handleAddCartItem);
-    li.querySelector(".fa-minus").addEventListener("click", this.handleSubtractCartItem);
+    li.querySelector(".plus").addEventListener("click", this.handleAddCartItem);
+    li.querySelector(".minus").addEventListener("click", this.handleSubtractCartItem);
     li.querySelector(".delete-item").addEventListener("click", this.handleRemoveCartItem);
 
     return li;

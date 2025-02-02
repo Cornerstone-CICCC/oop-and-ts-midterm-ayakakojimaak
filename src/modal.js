@@ -1,7 +1,6 @@
 // Get DOM elements
 const cartBtn = document.getElementById("cartBtn");
 const cartModal = document.getElementById("cartModal");
-const closeModalBtn = document.querySelector(".close-modal");
 const modalContent = document.querySelector(".modal-content");
 
 // Open cart modal
@@ -9,11 +8,6 @@ cartBtn.addEventListener("click", () => {
   cartModal.style.display = "block";
   // Add animation class
   modalContent.style.transform = "translateX(0)";
-});
-
-// Close cart modal
-closeModalBtn.addEventListener("click", () => {
-  closeModal();
 });
 
 // Close modal when clicking outside
