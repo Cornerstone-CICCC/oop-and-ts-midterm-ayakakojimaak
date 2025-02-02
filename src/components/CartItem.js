@@ -4,13 +4,17 @@ export class CartItem extends Component {
   constructor(props) {
     super(props);
     this.handleAddCartItem = this.handleAddCartItem.bind(this);
-    this.subtractCartItem = this.handleSubtractCartItem.bind(this);
+    this.handleSubtractCartItem = this.handleSubtractCartItem.bind(this);
+    this.handleRemoveCartItem = this.handleRemoveCartItem.bind(this);
   }
   handleAddCartItem() {
     this.props.context.addCartItem(this.props.item);
   }
   handleSubtractCartItem() {
     this.props.context.subtractCartItem(this.props.item);
+  }
+  handleRemoveCartItem() {
+    this.props.context.removeCartItem(this.props.item);
   }
 
   render() {
@@ -25,7 +29,7 @@ export class CartItem extends Component {
             <button class="quantity-btn minus">
               <i class="fas fa-minus"></i>
             </button>
-            <span class="quantity">1</span>
+            <span class="quantity">${this.props.item.quantity}</span>
             <button class="quantity-btn plus">
               <i class="fas fa-plus"></i>
             </button>
@@ -36,7 +40,8 @@ export class CartItem extends Component {
         </button>`;
 
     li.querySelector(".fa-plus").addEventListener("click", this.handleAddCartItem);
-    li.querySelector(".fa-minus").addEventListener("click", this.handleAddCartItem);
+    li.querySelector(".fa-minus").addEventListener("click", this.handleSubtractCartItem);
+    li.querySelector(".delete-item").addEventListener("click", this.handleRemoveCartItem);
 
     return li;
   }

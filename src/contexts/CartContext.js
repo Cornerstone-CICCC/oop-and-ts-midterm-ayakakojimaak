@@ -17,16 +17,15 @@ export class CartContext {
     if (index !== -1) {
       this.cartItems[index].quantity += 1;
     } else {
-      this.cartItems.push(item);
+      this.cartItems.push({ ...item, quantity: 1 });
     }
-    console.log(this.cartItems);
 
     this.notify();
   }
 
   subtractCartItem(item) {
     const index = this.cartItems.findIndex((cartItem) => cartItem.id === item.id);
-    if (index !== -1 && this.cartItems[index].quantity > 1) {
+    if (index !== -1 && this.cartItems[index].quantity > 0) {
       this.cartItems[index].quantity -= 1;
     }
     this.notify();
@@ -34,7 +33,11 @@ export class CartContext {
 
   removeCartItem(item) {
     const index = this.cartItems.findIndex((cartItem) => cartItem.id === item.id);
-    this.cartItems.splice(index, 1);
+    if (index !== -1) {
+      this.cartItems.splice(index, 1);
+    }
+    console.log(this.cartItems);
+
     this.notify();
   }
 }

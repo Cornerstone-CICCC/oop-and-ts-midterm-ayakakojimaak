@@ -11,7 +11,9 @@ export class CartList extends Component {
     this.updateCart();
   }
   updateCart() {
-    const totalPrice = this.props.context.cartItems.reduce((acc, item) => acc + item.price, 0).toFixed(2);
+    const totalPrice = this.props.context.cartItems
+      .reduce((acc, item) => acc + item.price * item.quantity, 0)
+      .toFixed(2);
 
     this.productListElement.innerHTML = `
             <div class="modal-header">
