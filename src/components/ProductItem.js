@@ -4,10 +4,24 @@ export class ProductItem extends Component {
   constructor(props) {
     super(props);
     this.handleAddCartItem = this.handleAddCartItem.bind(this);
+    this.isFavorited = false;
   }
 
   handleAddCartItem() {
     this.props.context.addCartItem(this.props.item);
+  }
+
+  handleFavorite(event) {
+    this.isFavorited = !this.isFavorited;
+    const icon = event.currentTarget.querySelector("i");
+
+    if (this.isFavorited) {
+      icon.classList.remove("far");
+      icon.classList.add("fas");
+    } else {
+      icon.classList.remove("fas");
+      icon.classList.add("far");
+    }
   }
 
   render() {
@@ -27,6 +41,7 @@ export class ProductItem extends Component {
         </div>`;
 
     li.querySelector(".add-to-cart").addEventListener("click", this.handleAddCartItem);
+    li.querySelector(".favorite").addEventListener("click", this.handleFavorite);
 
     return li;
   }

@@ -234,3 +234,56 @@ main {
 .proceed-btn:hover {
   background-color: #45a049;
 }
+
+.fa-heart {
+  color: crimson;
+}
+
+@media screen and (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .product-card {
+    padding: 0.5rem;
+  }
+
+  .product-card img {
+    height: 100px;
+    padding: 5px;
+  }
+
+  .product-card h3 {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .product-actions button {
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+
+  .modal-content {
+    width: 90%;
+    transform: translateY(90%);
+    padding: 1.5rem;
+  }
+
+  .modal-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .cart-total {
+    font-size: 1rem;
+  }
+
+  .proceed-btn {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+}
